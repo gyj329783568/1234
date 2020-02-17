@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: #2c3e50;
+      display: grid;
+    }
+    ul {
+      list-style: none;
+      width: 400px;
+      height: 100px;
+      align-self: center;
+      justify-self: center;
+      display: grid;
+      grid-template: 1fr/repeat(4, 1fr);
+    }
+    li {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: orange;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      animation-duration: 2s;
+      animation-delay: 2s;
+    }
+    li:nth-child(1) {
+      animation-name: hd;
+    }
+    li:nth-child(2) {
+      animation-name: hd;
+      animation-fill-mode: backwards;
+    }
+    li:nth-child(3) {
+      animation-name: hd;
+      animation-fill-mode: forwards;
+    }
+    li:nth-child(4) {
+      animation-name: hd;
+      animation-fill-mode: both;
+    }
+    @keyframes hd {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+        background: #2ecc71;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 三个状态：初始状态、开始状态、结束状态 -->
+  <ul>
+    <!-- 默认延迟过程中采用初始状态，结束在初始状态 -->
+    <li>normal</li>
+    <!-- 默认延迟过程中采用第一帧，结束在初始状态 -->
+    <li>backwards</li>
+    <!-- 默认延迟过程中采用初始状态、结束在最后帧 -->
+    <li>forwards</li>
+    <!-- 默认延迟过程中采用第一帧、结束在最后帧 -->
+    <li>both</li>
+  </ul>
+  <input type="text" />
+</body>
+</html>
